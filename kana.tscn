@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cjws5283tyejx"]
+
+[ext_resource type="Script" uid="uid://ekfju3r2exr3" path="res://kana.gd" id="1_2stsp"]
+[ext_resource type="Texture2D" uid="uid://cnw62plloh5tr" path="res://sprites/hiragana_a.png" id="1_ntg4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntg4i"]
+size = Vector2(18.3266, 18.987503)
+
+[node name="kana" type="Area2D" unique_id=1851307932 groups=["kana"]]
+position = Vector2(679.475, -79.975006)
+scale = Vector2(2.465, 2)
+script = ExtResource("1_2stsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1654490310]
+texture = ExtResource("1_ntg4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=348478106]
+position = Vector2(-0.1926933, -0.51249695)
+shape = SubResource("RectangleShape2D_ntg4i")

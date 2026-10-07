@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dvfylbhq3d0lm"]
+
+[ext_resource type="Texture2D" uid="uid://b2tfyn61ku6xa" path="res://textures/Light/texture_07.png" id="1_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dydy08duw2lhf" path="res://player.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cjws5283tyejx" path="res://kana.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
+
+[sub_resource type="GDScript" id="GDScript_cm0pq"]
+script/source = "extends Node2D
+
+@onready var player = $player
+var pass_counter:int 
+var fail_counter:int
+
+func _ready() -> void:
+	player.press_enter.connect(_on_enter_pressed)
+	player.player_death.connect(_on_player_death)
+
+func _on_enter_pressed(input: String) -> void:
+	var kana_list = get_tree().get_nodes_in_group(\"kana\")
+	var matching_kana = null
+	
+	for kana in kana_list:
+		if input == kana.romanization:
+			if matching_kana == null:
+				matching_kana = kana
+			elif kana.position.y > matching_kana.position.y:
+				matching_kana = kana
+	
+	if matching_kana != null:
+		matching_kana.queue_free()
+		pass_counter +=1
+		player.get_node(\"UI/pass_counter\").text = \"x\" + str(pass_counter)
+		print(\"Correct!\")
+	else:
+		player.set_health(player.health - 15.0)
+		fail_counter +=1
+		player.get_node(\"UI/fail_counter\").text = \"x\" + str(fail_counter)
+		print(\"Incorrect!\")
+
+func _on_player_death()-> void:
+	get_tree().change_scene_to_file(\"res://game_over_scene.tscn\")
+"
+
+[node name="Main" type="Node2D" unique_id=1055501840]
+script = SubResource("GDScript_cm0pq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=76211727]
+offset_left = -10.0
+offset_top = -91.0
+offset_right = 1157.0
+offset_bottom = 805.0
+size_flags_horizontal = 3
+texture = ExtResource("1_cm0pq")
+expand_mode = 1
+
+[node name="player" parent="." unique_id=1696414660 instance=ExtResource("2_r0du0")]
+position = Vector2(-3, -10)
+
+[node name="kana" parent="." unique_id=1851307932 instance=ExtResource("3_r0du0")]
+position = Vector2(569.475, -46.975006)
+
+[node name="Label" type="Label" parent="." unique_id=1677146340]
+offset_left = 971.0
+offset_top = 619.0
+offset_right = 1126.0
+offset_bottom = 642.0
+text = "Work In Progress"
+horizontal_alignment = 1
+
+[node name="kana_spawner" parent="." unique_id=1833008827 instance=ExtResource("4_cm0pq")]

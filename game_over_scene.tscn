@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://de8l2oto3sb8a"]
+
+[ext_resource type="Script" uid="uid://4148foss4o3a" path="res://game_over_scene.gd" id="1_bm5fa"]
+[ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://scroll.gdshader" id="2_ud48i"]
+[ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://Pattern.png" id="3_v4qw4"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://JinxedWizards.ttf" id="4_rx2wj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o2goy"]
+shader = ExtResource("2_ud48i")
+
+[node name="game_over_scene" type="Node2D" unique_id=2012965929]
+script = ExtResource("1_bm5fa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1687395413]
+offset_right = 1160.0
+offset_bottom = 658.0
+color = Color(0.023371784, 0.023371786, 0.023371782, 1)
+
+[node name="Pattern" type="TextureRect" parent="." unique_id=759106663]
+material = SubResource("ShaderMaterial_o2goy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1148.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_v4qw4")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1100536255]
+offset_left = 427.0
+offset_top = 263.0
+offset_right = 754.0
+offset_bottom = 384.0
+
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=732354016]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
+theme_override_fonts/font = ExtResource("4_rx2wj")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="backButton" type="Button" parent="VBoxContainer" unique_id=205383597]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
+theme_override_fonts/font = ExtResource("4_rx2wj")
+theme_override_font_sizes/font_size = 50
+text = "Back to menu"
+
+[node name="Label" type="Label" parent="." unique_id=1859588280]
+offset_left = 399.0
+offset_top = 152.0
+offset_right = 769.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0.45895082, 0.47733325, 0.59725326, 1)
+theme_override_fonts/font = ExtResource("4_rx2wj")
+theme_override_font_sizes/font_size = 90
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
