@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://4148foss4o3a" path="res://game_over_scene.gd" id="1_bm5fa"]
 [ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://scroll.gdshader" id="2_ud48i"]
-[ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://Pattern.png" id="3_v4qw4"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://JinxedWizards.ttf" id="4_rx2wj"]
+[ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://other assets/Pattern.png" id="3_v4qw4"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="4_rx2wj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2goy"]
 shader = ExtResource("2_ud48i")

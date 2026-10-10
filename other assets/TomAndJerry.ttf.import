@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://clbk3ugcplies"
-path="res://.godot/imported/TomAndJerry.ttf-b22fedf51598ff369bf5923a744d872e.fontdata"
+path="res://.godot/imported/TomAndJerry.ttf-9bc7f15355fb7e12a709b2d331f8736f.fontdata"
 
 [deps]
 
-source_file="res://TomAndJerry.ttf"
-dest_files=["res://.godot/imported/TomAndJerry.ttf-b22fedf51598ff369bf5923a744d872e.fontdata"]
+source_file="res://other assets/TomAndJerry.ttf"
+dest_files=["res://.godot/imported/TomAndJerry.ttf-9bc7f15355fb7e12a709b2d331f8736f.fontdata"]
 
 [params]
 

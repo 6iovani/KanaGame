@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db0pys62n6mp1"
-path="res://.godot/imported/Pattern.png-b80885eb09f7ae97cd56d496d1517a79.ctex"
+uid="uid://c7xqc7rky4c28"
+path="res://.godot/imported/ひらがな-removebg-preview.png-82d8022f11e37e6ae9c984ac262fa136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pattern.png"
-dest_files=["res://.godot/imported/Pattern.png-b80885eb09f7ae97cd56d496d1517a79.ctex"]
+source_file="res://other assets/ひらがな-removebg-preview.png"
+dest_files=["res://.godot/imported/ひらがな-removebg-preview.png-82d8022f11e37e6ae9c984ac262fa136.ctex"]
 
 [params]
 

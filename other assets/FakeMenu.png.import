@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7xqc7rky4c28"
-path="res://.godot/imported/ひらがな-removebg-preview.png-9c6f8dd9a3fb7b8c7c93724fdb642f2c.ctex"
+uid="uid://da4wx0bplx6yg"
+path="res://.godot/imported/FakeMenu.png-0f8647e3cd095d658795e90df9055a71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ひらがな-removebg-preview.png"
-dest_files=["res://.godot/imported/ひらがな-removebg-preview.png-9c6f8dd9a3fb7b8c7c93724fdb642f2c.ctex"]
+source_file="res://other assets/FakeMenu.png"
+dest_files=["res://.godot/imported/FakeMenu.png-0f8647e3cd095d658795e90df9055a71.ctex"]
 
 [params]
 
