@@ -48,10 +48,12 @@ func _on_player_death()-> void:
 	get_tree().change_scene_to_file(\"res://game_over_scene.tscn\")
 
 
-
 func _on_difficulty_timer_timeout() -> void:
 	
-	$kana_spawner/spawn_timer.wait_time -= 0.2
+	if $kana_spawner/spawn_timer.wait_time > 1:
+		$kana_spawner/spawn_timer.wait_time -= 0.2
+	
+	
 	if $kana_spawner.new_fall_speed <= max_fall_speed:
 		$kana_spawner.new_fall_speed += speed_increase
 		print(\"fall speed for next kanas = \" + str($kana_spawner.new_fall_speed))
