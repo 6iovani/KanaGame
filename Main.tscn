@@ -52,16 +52,12 @@ func _on_player_death()-> void:
 func _on_difficulty_timer_timeout() -> void:
 	
 	$kana_spawner/spawn_timer.wait_time -= 0.2
+	if $kana_spawner.new_fall_speed <= max_fall_speed:
+		$kana_spawner.new_fall_speed += speed_increase
+		print(\"fall speed for next kanas = \" + str($kana_spawner.new_fall_speed))
+	else:
+		print(\"max speed reached\")
 	
-	var kana_list = get_tree().get_nodes_in_group(\"kana\")
-
-	for kana in kana_list:
-		if kana.fall_speed < 200.0:
-			kana.fall_speed += speed_increase
-			print(\"speed increased by: \" + str(speed_increase))
-			$kana_spawner.new_fall_speed += speed_increase
-		else:
-			print(\"max speed reached\")
 			
 "
 
