@@ -5,6 +5,8 @@
 [node name="kana_spawner" type="Node2D" unique_id=1833008827]
 script = ExtResource("1_ubhe3")
 
-[node name="Timer" type="Timer" parent="." unique_id=1327563850]
-wait_time = 1.5
+[node name="spawn_timer" type="Timer" parent="." unique_id=1327563850]
+wait_time = 3.0
 autostart = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_timer_timeout"]

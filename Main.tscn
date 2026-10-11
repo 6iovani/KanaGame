@@ -49,8 +49,20 @@ func _on_player_death()-> void:
 
 
 
+func _on_difficulty_timer_timeout() -> void:
 	
+	$kana_spawner/spawn_timer.wait_time -= 0.2
 	
+	var kana_list = get_tree().get_nodes_in_group(\"kana\")
+
+	for kana in kana_list:
+		if kana.fall_speed < 200.0:
+			kana.fall_speed += speed_increase
+			print(\"speed increased by: \" + str(speed_increase))
+			$kana_spawner.new_fall_speed += speed_increase
+		else:
+			print(\"max speed reached\")
+			
 "
 
 [node name="Main" type="Node2D" unique_id=1055501840]
@@ -82,6 +94,9 @@ horizontal_alignment = 1
 [node name="kana_spawner" parent="." unique_id=1833008827 instance=ExtResource("4_cm0pq")]
 
 [node name="difficulty_timer" type="Timer" parent="." unique_id=1347570856]
+wait_time = 8.0
 autostart = true
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
+
+[editable path="kana_spawner"]
