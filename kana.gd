@@ -1,5 +1,6 @@
 extends Area2D
-var fall_speed: float = 50.0
+
+var fall_speed: float = 0.0
 
 
 # perirodcically choose from the selected characters array
@@ -32,7 +33,6 @@ func _ready() -> void:
 	add_to_group('kana')
 	set_kana_sprite(random_kana)
 	area_entered.connect(_on_area_entered)
-
 
 func _process(delta: float) -> void:
 	position.y += fall_speed * delta
