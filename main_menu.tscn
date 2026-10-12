@@ -130,6 +130,62 @@ theme_override_font_sizes/font_size = 60
 action_mode = 0
 text = "Exit"
 
+[node name="hiragana_button" type="Button" parent="UI container/VBoxContainer" unique_id=1373369678]
+visible = false
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Hiragana"
+
+[node name="katakana_button" type="Button" parent="UI container/VBoxContainer" unique_id=1936167501]
+visible = false
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Katakana"
+
+[node name="both_modes_button" type="Button" parent="UI container/VBoxContainer" unique_id=72965962]
+visible = false
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Both"
+
+[node name="back_button" type="Button" parent="UI container" unique_id=276157789]
+visible = false
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 0
+offset_left = 468.0
+offset_top = 462.0
+offset_right = 690.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Go back"
+
 [connection signal="pressed" from="UI container/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI container/VBoxContainer/hiragana_button" to="." method="_on_hiragana_button_pressed"]
+[connection signal="pressed" from="UI container/VBoxContainer/katakana_button" to="." method="_on_katakana_button_pressed"]
+[connection signal="pressed" from="UI container/VBoxContainer/both_modes_button" to="." method="_on_both_modes_button_pressed"]
+[connection signal="pressed" from="UI container/back_button" to="." method="_on_back_button_pressed"]
