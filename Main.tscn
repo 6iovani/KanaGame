@@ -9,7 +9,8 @@
 script/source = "extends Node2D
 
 @onready var player = $player
-@onready var global_kana = $kana
+@onready var select_mode = $kana
+
 
 var pass_counter:int 
 var fail_counter:int
@@ -19,6 +20,7 @@ var max_fall_speed: float = 250.0
 func _ready() -> void:
 	player.press_enter.connect(_on_enter_pressed)
 	player.player_death.connect(_on_player_death)
+	print(\"Selected mode: \", GameState.selected_mode)
 
 
 func _on_enter_pressed(input: String) -> void:
@@ -60,7 +62,12 @@ func _on_difficulty_timer_timeout() -> void:
 	else:
 		print(\"max speed reached\")
 	
-			
+
+
+
+func _on_main_menu_mode_selected(x: String) -> void:
+	print(x)
+	
 "
 
 [node name="Main" type="Node2D" unique_id=1055501840]

@@ -15,6 +15,10 @@ run/main_scene="uid://bcvplsdllhs0e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://other assets/icon.svg"
 
+[autoload]
+
+GameState="*uid://bi8txuthvvgw7"
+
 [display]
 
 window/stretch/mode="canvas_items"

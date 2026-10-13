@@ -1,5 +1,6 @@
 extends Control
 
+signal mode_selected(mode:String)
 
 func _on_play_button_pressed()-> void:
 	print("pressed play")
@@ -23,11 +24,20 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_hiragana_button_pressed() -> void:
-	pass # Replace with function body.
+	print("hiragana button pressed")
+
+	mode_selected.emit("hiragana")
+	GameState.selected_mode = "hiragana"
+	
+	get_tree().change_scene_to_file("res://Main.tscn")
+
+
+
+	
 
 
 func _on_katakana_button_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_both_modes_button_pressed() -> void:
