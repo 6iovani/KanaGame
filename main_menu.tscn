@@ -10,6 +10,7 @@
 shader = ExtResource("1_fu7sn")
 
 [node name="MainMenu" type="Control" unique_id=1139152997]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

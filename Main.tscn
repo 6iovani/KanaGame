@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjws5283tyejx" path="res://kana.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
 [ext_resource type="FontFile" uid="uid://clbk3ugcplies" path="res://other assets/TomAndJerry.ttf" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://by743wjpia1id" path="res://pause_menu.tscn" id="6_3dxm6"]
 
 [sub_resource type="GDScript" id="GDScript_cm0pq"]
 script/source = "extends Node2D
@@ -108,6 +109,9 @@ theme_override_font_sizes/font_size = 16
 text = "Mode: "
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="pause_menu" parent="." unique_id=1619959595 instance=ExtResource("6_3dxm6")]
+process_mode = 3
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
 

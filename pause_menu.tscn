@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://by743wjpia1id"]
+
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://b2atam08ceoo4" path="res://pause_menu.gd" id="1_nwcfo"]
+
+[node name="pause_menu" type="Control" unique_id=264539941]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nwcfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1124522008]
+process_mode = 3
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 658.0
+color = Color(0.023529412, 0.023529412, 0.023529412, 0.26666668)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=916630102]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 263.0
+offset_right = 754.0
+offset_bottom = 384.0
+
+[node name="resumeButton" type="Button" parent="VBoxContainer" unique_id=244645063]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="backButton" type="Button" parent="VBoxContainer" unique_id=777276916]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=1062745425]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 152.0
+offset_right = 769.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0.45895082, 0.47733325, 0.59725326, 1)
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 90
+text = "Paused"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/resumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
