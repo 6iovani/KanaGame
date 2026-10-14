@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dydy08duw2lhf" path="res://player.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cjws5283tyejx" path="res://kana.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
+[ext_resource type="FontFile" uid="uid://clbk3ugcplies" path="res://other assets/TomAndJerry.ttf" id="5_fos0i"]
 
 [sub_resource type="GDScript" id="GDScript_cm0pq"]
 script/source = "extends Node2D
@@ -21,6 +22,7 @@ func _ready() -> void:
 	player.press_enter.connect(_on_enter_pressed)
 	player.player_death.connect(_on_player_death)
 	print(\"selected mode: \", GameState.selected_mode)
+	$mode_display.text += GameState.selected_mode
 
 
 func _on_enter_pressed(input: String) -> void:
@@ -95,6 +97,17 @@ horizontal_alignment = 1
 [node name="difficulty_timer" type="Timer" parent="." unique_id=1347570856]
 wait_time = 8.0
 autostart = true
+
+[node name="mode_display" type="Label" parent="." unique_id=32774584]
+offset_left = 5.0
+offset_top = 464.0
+offset_right = 313.0
+offset_bottom = 543.0
+theme_override_fonts/font = ExtResource("5_fos0i")
+theme_override_font_sizes/font_size = 16
+text = "Mode: "
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
 

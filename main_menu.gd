@@ -46,7 +46,7 @@ func _on_both_modes_button_pressed() -> void:
 	print("both button pressed")
 
 	mode_selected.emit("hiragana + katakana")
-	GameState.selected_mode = "both"
+	GameState.selected_mode = "hiragana + katakana"
 	
 	get_tree().change_scene_to_file("res://Main.tscn")
 

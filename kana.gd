@@ -44,7 +44,7 @@ func select_mode()->Array:
 		kana_dicts = [hiragana]
 	elif GameState.selected_mode == "katakana":
 		kana_dicts.append(katakana)
-	elif GameState.selected_mode == "both":
+	elif GameState.selected_mode == "hiragana + katakana":
 		kana_dicts.append(hiragana)
 		kana_dicts.append(katakana)
 	
