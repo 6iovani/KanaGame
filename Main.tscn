@@ -20,7 +20,7 @@ var max_fall_speed: float = 250.0
 func _ready() -> void:
 	player.press_enter.connect(_on_enter_pressed)
 	player.player_death.connect(_on_player_death)
-	print(\"Selected mode: \", GameState.selected_mode)
+	print(\"selected mode: \", GameState.selected_mode)
 
 
 func _on_enter_pressed(input: String) -> void:
@@ -61,12 +61,6 @@ func _on_difficulty_timer_timeout() -> void:
 		print(\"fall speed for next kanas = \" + str($kana_spawner.new_fall_speed))
 	else:
 		print(\"max speed reached\")
-	
-
-
-
-func _on_main_menu_mode_selected(x: String) -> void:
-	print(x)
 	
 "
 

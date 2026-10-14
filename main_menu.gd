@@ -33,15 +33,22 @@ func _on_hiragana_button_pressed() -> void:
 
 
 
-	
-
-
 func _on_katakana_button_pressed() -> void:
-	pass
+	print("katakana button pressed")
+
+	mode_selected.emit("katakana")
+	GameState.selected_mode = "katakana"
+	
+	get_tree().change_scene_to_file("res://Main.tscn")
 
 
 func _on_both_modes_button_pressed() -> void:
-	pass # Replace with function body.
+	print("both button pressed")
+
+	mode_selected.emit("hiragana + katakana")
+	GameState.selected_mode = "both"
+	
+	get_tree().change_scene_to_file("res://Main.tscn")
 
 
 func _on_back_button_pressed() -> void:
