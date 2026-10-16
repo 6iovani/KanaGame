@@ -1,7 +1,7 @@
 extends Node2D
 
 var kana_scene = preload("res://kana.tscn")
-var new_fall_speed:float = 50.0 
+var new_fall_speed:float = GameState.selected_difficulty
 
 
 func _on_timer_timeout() -> void:

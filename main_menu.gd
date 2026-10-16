@@ -106,9 +106,9 @@ func _on_back_button_2_pressed() -> void:
 	$"UI container/comment_label".text = "Which kana do you want to learn?"
 
 func _on_normal_mode_button_pressed() -> void:
-	GameState.selected_difficulty= "normal"
+	GameState.selected_difficulty= 60.0
 	get_tree().change_scene_to_file("res://Main.tscn")
 	
 func _on_hard_mode_button_pressed() -> void:
-	GameState.selected_difficulty= "normal"
+	GameState.selected_difficulty= 100.0
 	get_tree().change_scene_to_file("res://Main.tscn")
