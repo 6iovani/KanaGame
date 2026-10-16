@@ -111,7 +111,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="pause_menu" parent="." unique_id=1619959595 instance=ExtResource("6_3dxm6")]
-process_mode = 3
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
 
