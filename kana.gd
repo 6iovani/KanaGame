@@ -120,16 +120,33 @@ var katakana: Dictionary = {
 }
 
 var fall_speed: float = 0.0
-var kana_dicts:Array = []
-var kana_list:Dictionary = select_mode().pick_random()
-var random_kana:String = kana_list.keys().pick_random()
-var romanization: String = random_kana
+
+static var kana_bag: Array[Dictionary] = []
+static var bag_mode: String = ""
+
+var kana_list: Dictionary = {}
+var random_kana: String = ""
+var romanization: String = ""
 
 
 func _ready() -> void:
-	add_to_group('kana')
-	set_kana_sprite(random_kana)
+	add_to_group("kana")
 	area_entered.connect(_on_area_entered)
+
+	if bag_mode != GameState.selected_mode or kana_bag.is_empty():
+		refill_kana_bag()
+
+	var next_kana: Dictionary = kana_bag.pop_back()
+
+	if next_kana["script"] == "hiragana":
+		kana_list = hiragana
+	else:
+		kana_list = katakana
+
+	random_kana = next_kana["romanization"]
+	romanization = random_kana
+
+	set_kana_sprite(random_kana)
 
 func _process(delta: float) -> void:
 	position.y += fall_speed * delta
@@ -140,14 +157,46 @@ func set_kana_sprite(sprite:String):
 func _on_area_entered(node:Area2D) -> void:
 	queue_free()
 	
-func select_mode()->Array:
+func select_mode() -> Array[Dictionary]:
+	var kana_dicts: Array[Dictionary] = []
+
 	if GameState.selected_mode == "hiragana":
-		kana_dicts = [hiragana]
+		kana_dicts.append(hiragana)
+
 	elif GameState.selected_mode == "katakana":
 		kana_dicts.append(katakana)
+
 	elif GameState.selected_mode == "hiragana + katakana":
 		kana_dicts.append(hiragana)
 		kana_dicts.append(katakana)
-	
+
 	return kana_dicts
+
+
+func refill_kana_bag() -> void:
+	kana_bag.clear()
+
+	var selected_dicts: Array[Dictionary] = select_mode()
+
+	for i in range(selected_dicts.size()):
+		var script_name: String
+
+		if GameState.selected_mode == "hiragana + katakana":
+			if i == 0:
+				script_name = "hiragana"
+			else:
+				script_name = "katakana"
+		elif GameState.selected_mode == "hiragana":
+			script_name = "hiragana"
+		else:
+			script_name = "katakana"
+
+		for key in selected_dicts[i].keys():
+			kana_bag.append({
+				"script": script_name,
+				"romanization": key
+			})
+
+	kana_bag.shuffle()
+	bag_mode = GameState.selected_mode
 		
