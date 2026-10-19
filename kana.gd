@@ -1,7 +1,5 @@
 extends Area2D
 
-var fall_speed: float = 0.0
-var kana_dicts:Array = []
 
 var hiragana: Dictionary = {
 	"a": preload("res://sprites/hiragana_a.png"),
@@ -121,6 +119,8 @@ var katakana: Dictionary = {
 	"n": preload("res://sprites/katakana_n.png")
 }
 
+var fall_speed: float = 0.0
+var kana_dicts:Array = []
 var kana_list:Dictionary = select_mode().pick_random()
 var random_kana:String = kana_list.keys().pick_random()
 var romanization: String = random_kana

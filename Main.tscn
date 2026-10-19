@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b2tfyn61ku6xa" path="res://textures/Light/texture_07.png" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dydy08duw2lhf" path="res://player.tscn" id="2_r0du0"]
-[ext_resource type="PackedScene" uid="uid://cjws5283tyejx" path="res://kana.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
 [ext_resource type="FontFile" uid="uid://clbk3ugcplies" path="res://other assets/TomAndJerry.ttf" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://by743wjpia1id" path="res://pause_menu.tscn" id="6_3dxm6"]
@@ -11,7 +10,6 @@
 script/source = "extends Node2D
 
 @onready var player = $player
-@onready var select_mode = $kana
 
 
 var pass_counter:int 
@@ -82,9 +80,6 @@ expand_mode = 1
 [node name="player" parent="." unique_id=1696414660 instance=ExtResource("2_r0du0")]
 position = Vector2(-3, -10)
 
-[node name="kana" parent="." unique_id=1851307932 instance=ExtResource("3_r0du0")]
-position = Vector2(569.475, -46.975006)
-
 [node name="Label" type="Label" parent="." unique_id=1677146340]
 offset_left = 971.0
 offset_top = 619.0
@@ -111,6 +106,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="pause_menu" parent="." unique_id=1619959595 instance=ExtResource("6_3dxm6")]
+visible = false
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
 
