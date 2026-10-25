@@ -14,13 +14,17 @@ func _on_play_button_pressed()-> void:
 	$"UI container/back_button".show()
 	
 	$"UI container/comment_label".text = "Which kana do you want to learn?"
+	$"sfx container/button_click1".play()
 	
 func _on_options_button_pressed() -> void:
 	print("pressed options")
+	$"sfx container/button_click1".play()
 
 func _on_exit_button_pressed() -> void:
+	$"sfx container/button_click1".play()
 	print("pressed exit")
 	get_tree().quit()
+	
 
 
 func _on_hiragana_button_pressed() -> void:
@@ -39,7 +43,7 @@ func _on_hiragana_button_pressed() -> void:
 	$"UI container/back_button2".show()
 	
 	$"UI container/comment_label".text = "Choose a difficulty"
-
+	$"sfx container/button_click1".play()
 
 func _on_katakana_button_pressed() -> void:
 	print("katakana button pressed")
@@ -57,7 +61,7 @@ func _on_katakana_button_pressed() -> void:
 	$"UI container/back_button2".show()
 	
 	$"UI container/comment_label".text = "Choose a difficulty"
-
+	$"sfx container/button_click1".play()
 
 func _on_both_modes_button_pressed() -> void:
 	print("both button pressed")
@@ -75,6 +79,7 @@ func _on_both_modes_button_pressed() -> void:
 	$"UI container/back_button2".show()
 	
 	$"UI container/comment_label".text = "Choose a difficulty"
+	$"sfx container/button_click1".play()
 
 
 func _on_back_button_pressed() -> void:
@@ -89,6 +94,7 @@ func _on_back_button_pressed() -> void:
 	$"UI container/back_button".hide()
 	
 	$"UI container/comment_label".text = "Master all the Kana!"
+	$"sfx container/button_click2".play()
 
 func _on_back_button_2_pressed() -> void:
 	$"UI container/VBoxContainer/normal_mode_button".hide()
@@ -103,11 +109,20 @@ func _on_back_button_2_pressed() -> void:
 	$"UI container/back_button".show()
 	
 	$"UI container/comment_label".text = "Which kana do you want to learn?"
+	$"sfx container/button_click2".play()
 
 func _on_normal_mode_button_pressed() -> void:
+	$"sfx container/button_click1".play()
 	GameState.selected_difficulty= 60.0
 	get_tree().change_scene_to_file("res://Main.tscn")
 	
+	
 func _on_hard_mode_button_pressed() -> void:
+	$"sfx container/button_click1".play()
 	GameState.selected_difficulty= 100.0
 	get_tree().change_scene_to_file("res://Main.tscn")
+	
+
+
+func _on_sfx_menu_music_finished() -> void:
+	$"sfx container/sfx_menu_music".play()

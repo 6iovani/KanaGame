@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://da4wx0bplx6yg" path="res://other assets/FakeMenu.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c7xqc7rky4c28" path="res://other assets/ひらがな-removebg-preview.png" id="3_nlkkf"]
 [ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="4_jix8l"]
+[ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://sfx/872332__signaturesoundsorg__click_1.wav" id="6_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://sfx/872334__signaturesoundsorg__click_2.wav" id="7_qe12f"]
+[ext_resource type="AudioStream" uid="uid://dg02pkxjo5ysy" path="res://sfx/home-menu-music-loop-128bpm-g-major.wav" id="8_8qtwp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlkkf"]
 shader = ExtResource("1_fu7sn")
@@ -236,6 +239,19 @@ theme_override_font_sizes/font_size = 60
 action_mode = 0
 text = "Go back"
 
+[node name="sfx container" type="Node" parent="." unique_id=577299055]
+
+[node name="button_click1" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1804881416]
+stream = ExtResource("6_nlkkf")
+
+[node name="button_click2" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1044360568]
+stream = ExtResource("7_qe12f")
+
+[node name="sfx_menu_music" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1422957207]
+stream = ExtResource("8_8qtwp")
+volume_db = 10.0
+autoplay = true
+
 [connection signal="pressed" from="UI container/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
@@ -246,3 +262,4 @@ text = "Go back"
 [connection signal="pressed" from="UI container/VBoxContainer/hard_mode_button" to="." method="_on_hard_mode_button_pressed"]
 [connection signal="pressed" from="UI container/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="UI container/back_button2" to="." method="_on_back_button_2_pressed"]
+[connection signal="finished" from="sfx container/sfx_menu_music" to="." method="_on_sfx_menu_music_finished"]

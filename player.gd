@@ -37,6 +37,7 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(node:Area2D)->void:
+	$"../sfx container/sfx_miss".play()
 	set_health(health - 25.0)
 
 
