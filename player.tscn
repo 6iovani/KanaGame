@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o6pdithk1ohw" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://miss_label.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(1156, 135)
@@ -24,12 +25,37 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="spawn_area" type="ColorRect" parent="UI" unique_id=655483941]
+layout_mode = 0
+offset_left = 175.0
+offset_top = -13.0
+offset_right = 978.0
+offset_bottom = 669.0
+size_flags_horizontal = 3
+color = Color(0.18431373, 0.18431373, 0.18431373, 1)
+
+[node name="left_pillar" type="ColorRect" parent="UI" unique_id=484520069]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -20.0
+offset_right = 175.0
+offset_bottom = 666.0
+color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+
+[node name="left_pillar2" type="ColorRect" parent="UI" unique_id=631920677]
+layout_mode = 0
+offset_left = 978.0
+offset_top = -14.0
+offset_right = 1156.0
+offset_bottom = 672.0
+color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+
 [node name="health_bar" type="ProgressBar" parent="UI" unique_id=894345340]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 607.0
-offset_right = 238.0
-offset_bottom = 638.0
+offset_left = 10.0
+offset_top = 117.0
+offset_right = 117.0
+offset_bottom = 139.0
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -37,6 +63,7 @@ theme_override_fonts/font = ExtResource("2_onrkg")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/fill = SubResource("StyleBoxFlat_4flbx")
 value = 100.0
+show_percentage = false
 
 [node name="Label" type="Label" parent="UI" unique_id=570922875]
 layout_mode = 0
@@ -44,7 +71,7 @@ offset_left = 436.0
 offset_top = 591.0
 offset_right = 719.0
 offset_bottom = 643.0
-theme_override_colors/font_color = Color(0.77943903, 0.62117064, 0.21363679, 1)
+theme_override_colors/font_color = Color(0.31801978, 0.3180198, 0.31801972, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_onrkg")
@@ -55,25 +82,25 @@ vertical_alignment = 1
 
 [node name="pass_counter" type="Label" parent="UI" unique_id=322848039]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 570.0
-offset_right = 64.0
-offset_bottom = 593.0
-theme_override_colors/font_color = Color(0.28147882, 0.72621167, 0.93889904, 1)
+offset_left = 1045.0
+offset_top = 101.0
+offset_right = 1098.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.78039217, 0.61960787, 0.21176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_onrkg")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="fail_counter" type="Label" parent="UI" unique_id=1006741528]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 570.0
-offset_right = 150.0
-offset_bottom = 593.0
+offset_left = 1043.0
+offset_top = 550.0
+offset_right = 1083.0
+offset_bottom = 573.0
 theme_override_colors/font_color = Color(0.93507636, 0, 0.39170632, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -82,3 +109,50 @@ theme_override_font_sizes/font_size = 20
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="score_label" type="Label" parent="UI" unique_id=1248456392]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 31.0
+offset_right = 1149.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_onrkg")
+theme_override_font_sizes/font_size = 40
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hp_label" type="Label" parent="UI" unique_id=455033707]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 81.0
+offset_right = 60.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_onrkg")
+theme_override_font_sizes/font_size = 40
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="miss_label" type="RichTextLabel" parent="UI" unique_id=194955957]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 541.0
+offset_right = 618.0
+offset_bottom = 584.0
+pivot_offset = Vector2(40, 20)
+theme_override_colors/default_color = Color(0.91764706, 0.16078432, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_onrkg")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Wrong!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_i3pqv")
+display_duration = 2.0

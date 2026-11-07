@@ -9,4 +9,13 @@ script = ExtResource("1_ubhe3")
 wait_time = 3.0
 autostart = true
 
+[node name="spawn_area" type="ColorRect" parent="." unique_id=956868286]
+visible = false
+offset_left = 175.0
+offset_top = -13.0
+offset_right = 978.0
+offset_bottom = 669.0
+size_flags_horizontal = 3
+color = Color(0.18431373, 0.18431373, 0.18431373, 1)
+
 [connection signal="timeout" from="spawn_timer" to="." method="_on_timer_timeout"]

@@ -4,7 +4,7 @@ var current_input: String = ""
 var health:float = 100.0
 signal press_enter(answer: String)
 signal player_death
-
+signal missed_kana(kana_position:Vector2)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
@@ -38,6 +38,9 @@ func _ready() -> void:
 
 func _on_area_entered(node:Area2D)->void:
 	$"../sfx container/sfx_miss".play()
+	var x = node.global_position.x
+	var kana_position:Vector2 = Vector2(x,600.0)
+	missed_kana.emit(kana_position)
 	set_health(health - 25.0)
 
 
