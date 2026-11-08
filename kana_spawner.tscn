@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cynljsuhqjjfo"]
 
-[ext_resource type="Script" uid="uid://d1l5vqyl66cp4" path="res://kana_spawner.gd" id="1_ubhe3"]
+[ext_resource type="Script" uid="uid://d1l5vqyl66cp4" path="res://scripts/kana_spawner.gd" id="1_ubhe3"]
 
 [node name="kana_spawner" type="Node2D" unique_id=1833008827]
 script = ExtResource("1_ubhe3")

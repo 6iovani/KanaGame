@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by743wjpia1id"]
 
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://b2atam08ceoo4" path="res://pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://b2atam08ceoo4" path="res://scripts/pause_menu.gd" id="1_nwcfo"]
 
 [node name="pause_menu" type="Control" unique_id=264539941]
 process_mode = 3

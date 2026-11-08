@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://de8l2oto3sb8a"]
 
-[ext_resource type="Script" uid="uid://4148foss4o3a" path="res://game_over_scene.gd" id="1_bm5fa"]
-[ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://scroll.gdshader" id="2_ud48i"]
-[ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://other assets/Pattern.png" id="3_v4qw4"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="4_rx2wj"]
-[ext_resource type="AudioStream" uid="uid://bswjo3b1fjx6k" path="res://sfx/game_over.ogg" id="5_v4qw4"]
+[ext_resource type="Script" uid="uid://4148foss4o3a" path="res://scripts/game_over_scene.gd" id="1_bm5fa"]
+[ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://assets/shaders/scroll.gdshader" id="2_ud48i"]
+[ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://assets/other assets/Pattern.png" id="3_v4qw4"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="4_rx2wj"]
+[ext_resource type="AudioStream" uid="uid://bswjo3b1fjx6k" path="res://assets/sounds/sfx/game_over.ogg" id="5_v4qw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2goy"]
 shader = ExtResource("2_ud48i")

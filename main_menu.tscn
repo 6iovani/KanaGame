@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bcvplsdllhs0e"]
 
-[ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://scroll.gdshader" id="1_fu7sn"]
-[ext_resource type="Script" uid="uid://cxqpl5o6cjc50" path="res://main_menu.gd" id="1_glbon"]
-[ext_resource type="Texture2D" uid="uid://da4wx0bplx6yg" path="res://other assets/FakeMenu.png" id="3_glbon"]
-[ext_resource type="Texture2D" uid="uid://c7xqc7rky4c28" path="res://other assets/ひらがな-removebg-preview.png" id="3_nlkkf"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="4_jix8l"]
-[ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://sfx/872332__signaturesoundsorg__click_1.wav" id="6_nlkkf"]
-[ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://sfx/872334__signaturesoundsorg__click_2.wav" id="7_qe12f"]
-[ext_resource type="AudioStream" uid="uid://dg02pkxjo5ysy" path="res://sfx/home-menu-music-loop-128bpm-g-major.wav" id="8_8qtwp"]
+[ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://assets/shaders/scroll.gdshader" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://cxqpl5o6cjc50" path="res://scripts/main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://da4wx0bplx6yg" path="res://assets/other assets/FakeMenu.png" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://c7xqc7rky4c28" path="res://assets/other assets/ひらがな-removebg-preview.png" id="3_nlkkf"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="4_jix8l"]
+[ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="5_dy7ct"]
+[ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://assets/sounds/sfx/872332__signaturesoundsorg__click_1.wav" id="6_8qtwp"]
+[ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://assets/sounds/sfx/872334__signaturesoundsorg__click_2.wav" id="7_dy7ct"]
+[ext_resource type="AudioStream" uid="uid://dg02pkxjo5ysy" path="res://assets/sounds/sfx/home-menu-music-loop-128bpm-g-major.wav" id="8_0o4t1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlkkf"]
 shader = ExtResource("1_fu7sn")
@@ -83,9 +84,9 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.6055134, 0.000831194, 0.00045536502, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9647059)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 90
-text = " Awesome title"
+theme_override_fonts/font = ExtResource("5_dy7ct")
+text = "Kana Warrior"
+horizontal_alignment = 1
 
 [node name="comment_label" type="Label" parent="UI container" unique_id=668237932]
 layout_mode = 0
@@ -242,13 +243,13 @@ text = "Go back"
 [node name="sfx container" type="Node" parent="." unique_id=577299055]
 
 [node name="button_click1" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1804881416]
-stream = ExtResource("6_nlkkf")
+stream = ExtResource("6_8qtwp")
 
 [node name="button_click2" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1044360568]
-stream = ExtResource("7_qe12f")
+stream = ExtResource("7_dy7ct")
 
 [node name="sfx_menu_music" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1422957207]
-stream = ExtResource("8_8qtwp")
+stream = ExtResource("8_0o4t1")
 volume_db = 10.0
 autoplay = true
 

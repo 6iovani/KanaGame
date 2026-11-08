@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dydy08duw2lhf"]
 
-[ext_resource type="Script" uid="uid://o6pdithk1ohw" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://other assets/JinxedWizards.ttf" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://miss_label.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://o6pdithk1ohw" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://scripts/miss_label.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(1156, 135)
