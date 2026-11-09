@@ -36,6 +36,7 @@ offset_left = -3.0
 offset_top = -20.0
 offset_right = 175.0
 offset_bottom = 666.0
+scale = Vector2(1.0195608, 1.0195608)
 color = Color(0.14406255, 0.14406255, 0.14406249, 1)
 
 [node name="left_pillar2" type="ColorRect" parent="UI" unique_id=631920677]
@@ -142,6 +143,7 @@ offset_left = -4.0
 offset_top = 81.0
 offset_right = 51.0
 offset_bottom = 121.0
+scale = Vector2(1, 0.9677651)
 theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -171,62 +173,79 @@ display_duration = 2.0
 [node name="health" type="CanvasLayer" parent="UI" unique_id=1696482784]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/health" unique_id=239808404]
-offset_left = 49.0
-offset_top = 86.0
-offset_right = 170.0
-offset_bottom = 117.0
+anchors_preset = -1
+offset_left = 3.0
+offset_top = 117.0
+offset_right = 164.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="stock" type="Label" parent="UI/health/HBoxContainer" unique_id=1389079307]
+[node name="health_stock" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=1765375213]
+custom_minimum_size = Vector2(25, 20)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="stock2" type="Label" parent="UI/health/HBoxContainer" unique_id=108466777]
+[node name="health_stock2" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=292148488]
+custom_minimum_size = Vector2(25, 20)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="stock3" type="Label" parent="UI/health/HBoxContainer" unique_id=261045164]
+[node name="health_stock3" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=284945214]
+custom_minimum_size = Vector2(25, 20)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="stock4" type="Label" parent="UI/health/HBoxContainer" unique_id=1134724222]
+[node name="health_stock4" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=822929398]
+custom_minimum_size = Vector2(25, 20)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="stock5" type="Label" parent="UI/health/HBoxContainer" unique_id=1421646322]
+[node name="health_stock5" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=291305395]
+custom_minimum_size = Vector2(25, 20)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9184007, 0.16026837, 5.7756904e-07, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
 text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="health_stock" type="RichTextLabel" parent="UI/health" unique_id=1977509383]
+custom_minimum_size = Vector2(25, 20)
+offset_left = 310.0
+offset_top = 123.0
+offset_right = 522.0
+offset_bottom = 268.0
+theme_override_colors/default_color = Color(0.92941177, 0.63529414, 0.21960784, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+text = "[wave freq=0][shake rate=10]+[/shake]"
 horizontal_alignment = 1
 vertical_alignment = 1
