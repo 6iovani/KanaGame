@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4148foss4o3a" path="res://scripts/game_over_scene.gd" id="1_bm5fa"]
 [ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://assets/shaders/scroll.gdshader" id="2_ud48i"]
 [ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://assets/other assets/Pattern.png" id="3_v4qw4"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="4_rx2wj"]
+[ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="4_v4qw4"]
 [ext_resource type="AudioStream" uid="uid://bswjo3b1fjx6k" path="res://assets/sounds/sfx/game_over.ogg" id="5_v4qw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2goy"]
@@ -31,35 +31,35 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1100536255]
-offset_left = 427.0
-offset_top = 263.0
-offset_right = 754.0
-offset_bottom = 384.0
+offset_left = 392.0
+offset_top = 269.0
+offset_right = 794.0
+offset_bottom = 390.0
 
 [node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=732354016]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
-theme_override_fonts/font = ExtResource("4_rx2wj")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("4_v4qw4")
+theme_override_font_sizes/font_size = 16
 text = "Restart"
 
 [node name="backButton" type="Button" parent="VBoxContainer" unique_id=205383597]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
-theme_override_fonts/font = ExtResource("4_rx2wj")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("4_v4qw4")
+theme_override_font_sizes/font_size = 16
 text = "Back to menu"
 
 [node name="Label" type="Label" parent="." unique_id=1859588280]
-offset_left = 399.0
-offset_top = 152.0
-offset_right = 769.0
-offset_bottom = 227.0
+offset_left = 373.0
+offset_top = 147.0
+offset_right = 820.0
+offset_bottom = 223.0
 theme_override_colors/font_color = Color(0.45895082, 0.47733325, 0.59725326, 1)
-theme_override_fonts/font = ExtResource("4_rx2wj")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("4_v4qw4")
+theme_override_font_sizes/font_size = 25
 text = "GAME OVER"
 horizontal_alignment = 1
 

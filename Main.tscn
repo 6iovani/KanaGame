@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dvfylbhq3d0lm"]
 
+[ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="2_fos0i"]
 [ext_resource type="PackedScene" uid="uid://dydy08duw2lhf" path="res://player.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
-[ext_resource type="FontFile" uid="uid://clbk3ugcplies" path="res://assets/fonts/TomAndJerry.ttf" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://by743wjpia1id" path="res://pause_menu.tscn" id="6_3dxm6"]
 [ext_resource type="AudioStream" uid="uid://0gdweo3s2whj" path="res://assets/sounds/sfx/snd_hurt1.wav" id="6_lgr22"]
 
@@ -20,7 +20,9 @@ var max_fall_speed: float = 250.0
 signal correct(pos:Vector2)
 signal wrong(pos:Vector2)
 
+
 func _ready() -> void:
+	player.set_health(player.health)
 	player.press_enter.connect(_on_enter_pressed)
 	player.player_death.connect(_on_player_death)
 	print(\"selected mode: \", GameState.selected_mode)
@@ -51,7 +53,7 @@ func _on_enter_pressed(input: String) -> void:
 	else:
 		wrong.emit(Vector2(550.0,550.0))
 		$\"sfx container/sfx_miss\".play()
-		player.set_health(player.health - 15.0)
+		player.set_health(player.health - 1)
 		fail_counter +=1
 		player.get_node(\"UI/fail_counter\").text = \"x\" + str(fail_counter)
 		print(\"Incorrect!\")
@@ -87,14 +89,13 @@ wait_time = 8.0
 autostart = true
 
 [node name="mode_display" type="Label" parent="." unique_id=32774584]
-offset_left = 5.0
-offset_top = 464.0
-offset_right = 203.0
-offset_bottom = 554.0
-theme_override_fonts/font = ExtResource("5_fos0i")
-theme_override_font_sizes/font_size = 16
+offset_left = 4.0
+offset_top = 552.0
+offset_right = 174.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("2_fos0i")
+theme_override_font_sizes/font_size = 5
 text = "Mode: "
-vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="pause_menu" parent="." unique_id=1619959595 instance=ExtResource("6_3dxm6")]
@@ -114,5 +115,4 @@ stream = ExtResource("6_lgr22")
 [connection signal="missed_kana" from="player" to="player/UI/miss_label" method="_on_player_missed_kana"]
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]
 
-[editable path="player"]
 [editable path="kana_spawner"]

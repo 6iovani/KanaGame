@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cxqpl5o6cjc50" path="res://scripts/main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://da4wx0bplx6yg" path="res://assets/other assets/FakeMenu.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c7xqc7rky4c28" path="res://assets/other assets/ひらがな-removebg-preview.png" id="3_nlkkf"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="4_jix8l"]
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="5_dy7ct"]
 [ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://assets/sounds/sfx/872332__signaturesoundsorg__click_1.wav" id="6_8qtwp"]
 [ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://assets/sounds/sfx/872334__signaturesoundsorg__click_2.wav" id="7_dy7ct"]
@@ -75,27 +74,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -306.5
-offset_top = -243.5
-offset_right = 306.5
-offset_bottom = -158.5
+offset_left = -286.0
+offset_top = -243.0
+offset_right = 327.0
+offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.6055134, 0.000831194, 0.00045536502, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9647059)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 22
 text = "Kana Warrior"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="comment_label" type="Label" parent="UI container" unique_id=668237932]
 layout_mode = 0
-offset_left = 278.0
-offset_top = 169.0
-offset_right = 894.0
-offset_bottom = 251.0
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 25
+offset_left = 280.0
+offset_top = 164.0
+offset_right = 896.0
+offset_bottom = 246.0
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 6
 text = "Master all the Kana!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -120,8 +121,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Play"
 
@@ -131,8 +132,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Options"
 
@@ -142,8 +143,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Exit"
 
@@ -154,8 +155,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Hiragana"
 
@@ -166,8 +167,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Katakana"
 
@@ -178,8 +179,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Both"
 
@@ -190,8 +191,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Beginer"
 
@@ -202,8 +203,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Master
 "
@@ -212,15 +213,15 @@ text = "Master
 visible = false
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 0
-offset_left = 474.0
-offset_top = 474.0
-offset_right = 696.0
-offset_bottom = 539.0
+offset_left = 467.0
+offset_top = 468.0
+offset_right = 703.0
+offset_bottom = 533.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Go back"
 
@@ -228,15 +229,15 @@ text = "Go back"
 visible = false
 custom_minimum_size = Vector2(148, 0)
 layout_mode = 0
-offset_left = 474.0
-offset_top = 475.0
-offset_right = 696.0
-offset_bottom = 540.0
+offset_left = 467.0
+offset_top = 469.0
+offset_right = 703.0
+offset_bottom = 534.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Go back"
 

@@ -1,12 +1,13 @@
 extends Area2D
 
 var current_input: String = ""
-var health:float = 100.0
+var health:int = 5
 signal press_enter(answer: String)
 signal player_death
 signal missed_kana(kana_position:Vector2)
 
 func _input(event: InputEvent) -> void:
+		
 	if event is InputEventKey:
 		if event.pressed and not event.echo:
 
@@ -34,6 +35,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(node:Area2D)->void:
@@ -41,14 +43,17 @@ func _on_area_entered(node:Area2D)->void:
 	var x = node.global_position.x
 	var kana_position:Vector2 = Vector2(x,600.0)
 	missed_kana.emit(kana_position)
-	set_health(health - 25.0)
+	set_health(health - 1)
 
 
-func set_health(new_health:float)->void:
-	health = new_health
-	get_node("UI/health_bar").value = health
+
+func set_health(new_health:int)->void:
+	var current_hearts = $UI/health/HBoxContainer
+	var heart = current_hearts.get_child(-1)
+	if current_hearts.get_child_count() > new_health:
+		heart.queue_free()
 	
-
+	health = new_health
 	if health <= 0:
 		player_death.emit()
 
