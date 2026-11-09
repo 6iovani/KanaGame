@@ -62,7 +62,7 @@ func set_health(new_health:int)->void:
 			
 	if health == 1:
 		var last_heart = current_hearts.get_child(0)
-		last_heart.text = "[wave freq=13][shake rate=10]+[/shake][/wave]"
+		last_heart.text = "[pulse freq=2][wave freq=13][shake rate=10]+[/shake][/wave][/pulse]"
 		last_heart.add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
 	if health <= 0:
 		player_death.emit()

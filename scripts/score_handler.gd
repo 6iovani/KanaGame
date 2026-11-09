@@ -9,6 +9,7 @@ var wrong_guess_counter:int = 0
 var streak_counter:int = 0
 var missed_counter:int = 0
 
+
 func _ready() -> void:
 	scale = Vector2.ZERO
 	modulate.a = 0.0
@@ -58,7 +59,6 @@ func _on_main_correct(pos: Vector2) -> void:
 	text = "Correct"
 	add_theme_color_override("default_color", Color(0.18, 0.51, 0.0))
 	play_pop_animation(pos)
-	
 	streak_counter += 1
 	$"../streak_counter".text = "x" + str(streak_counter)
 	
