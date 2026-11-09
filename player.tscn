@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://o6pdithk1ohw" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="2_onrkg"]
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="3_hqtel"]
-[ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://scripts/miss_label.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://scripts/score_handler.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(1156, 135)
@@ -61,12 +61,12 @@ text = "Type something..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pass_counter" type="Label" parent="UI" unique_id=322848039]
+[node name="score_counter" type="Label" parent="UI" unique_id=322848039]
 layout_mode = 0
-offset_left = 1045.0
-offset_top = 101.0
-offset_right = 1098.0
-offset_bottom = 147.0
+offset_left = 976.0
+offset_top = 102.0
+offset_right = 1155.0
+offset_bottom = 148.0
 theme_override_colors/font_color = Color(0.78039217, 0.61960787, 0.21176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -76,12 +76,42 @@ text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="fail_counter" type="Label" parent="UI" unique_id=1006741528]
+[node name="streak_counter" type="Label" parent="UI" unique_id=942968508]
 layout_mode = 0
-offset_left = 1060.0
-offset_top = 592.0
-offset_right = 1100.0
-offset_bottom = 615.0
+offset_left = 1000.0
+offset_top = 314.0
+offset_right = 1144.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hqtel")
+theme_override_font_sizes/font_size = 13
+text = "x0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wrong_counter" type="Label" parent="UI" unique_id=1006741528]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 588.0
+offset_right = 1105.0
+offset_bottom = 611.0
+theme_override_colors/font_color = Color(0.93507636, 0, 0.39170632, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_onrkg")
+theme_override_font_sizes/font_size = 20
+text = "x0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="missed_counter" type="Label" parent="UI" unique_id=1766797080]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 590.0
+offset_right = 1042.0
+offset_bottom = 613.0
 theme_override_colors/font_color = Color(0.93507636, 0, 0.39170632, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -93,10 +123,10 @@ vertical_alignment = 1
 
 [node name="score_label" type="Label" parent="UI" unique_id=1248456392]
 layout_mode = 0
-offset_left = 1005.0
-offset_top = 31.0
-offset_right = 1149.0
-offset_bottom = 112.0
+offset_left = 977.0
+offset_top = 29.0
+offset_right = 1163.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

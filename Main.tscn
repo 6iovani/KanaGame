@@ -13,8 +13,6 @@ script/source = "extends Node2D
 
 @onready var player = $player
 
-var pass_counter:int 
-var fail_counter:int
 var speed_increase: float = 10.0
 var max_fall_speed: float = 250.0
 signal correct(pos:Vector2)
@@ -47,16 +45,11 @@ func _on_enter_pressed(input: String) -> void:
 		correct.emit(kana_position)
 		matching_kana.queue_free()
 		
-		pass_counter +=1
-		player.get_node(\"UI/pass_counter\").text = \"x\" + str(pass_counter)
-		print(\"Correct!\")
 	else:
 		wrong.emit(Vector2(550.0,550.0))
 		$\"sfx container/sfx_miss\".play()
 		player.set_health(player.health - 1)
-		fail_counter +=1
-		player.get_node(\"UI/fail_counter\").text = \"x\" + str(fail_counter)
-		print(\"Incorrect!\")
+		
 
 func _on_player_death()-> void:
 	get_tree().change_scene_to_file(\"res://game_over_scene.tscn\")
