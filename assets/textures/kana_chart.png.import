@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da4wx0bplx6yg"
-path="res://.godot/imported/FakeMenu.png-879dcffb8ce44aecbd39fbf2c75b8685.ctex"
+uid="uid://cfyfeu17qhyjm"
+path="res://.godot/imported/kana_chart.png-982b10c38bf37609f50de6f50f96df6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/other assets/FakeMenu.png"
-dest_files=["res://.godot/imported/FakeMenu.png-879dcffb8ce44aecbd39fbf2c75b8685.ctex"]
+source_file="res://assets/textures/kana_chart.png"
+dest_files=["res://.godot/imported/kana_chart.png-982b10c38bf37609f50de6f50f96df6c.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://assets/shaders/scroll.gdshader" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://cxqpl5o6cjc50" path="res://scripts/main_menu.gd" id="1_glbon"]
-[ext_resource type="Texture2D" uid="uid://da4wx0bplx6yg" path="res://assets/other assets/FakeMenu.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c7xqc7rky4c28" path="res://assets/other assets/ひらがな-removebg-preview.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cfyfeu17qhyjm" path="res://assets/textures/kana_chart.png" id="5_8qtwp"]
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="5_dy7ct"]
 [ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://assets/sounds/sfx/872332__signaturesoundsorg__click_1.wav" id="6_8qtwp"]
 [ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://assets/sounds/sfx/872334__signaturesoundsorg__click_2.wav" id="7_dy7ct"]
@@ -42,22 +42,6 @@ grow_vertical = 2
 texture = ExtResource("3_nlkkf")
 expand_mode = 1
 stretch_mode = 1
-
-[node name="UI" type="TextureRect" parent="." unique_id=1862312333]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -321.0
-offset_top = -240.0
-offset_right = 321.0
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_glbon")
 
 [node name="UI container" type="Control" parent="." unique_id=1541796430]
 layout_mode = 1
@@ -136,6 +120,17 @@ theme_override_fonts/font = ExtResource("5_dy7ct")
 theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Options"
+
+[node name="review_button" type="Button" parent="UI container/VBoxContainer" unique_id=211307224]
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "Review"
 
 [node name="exit_button" type="Button" parent="UI container/VBoxContainer" unique_id=312257802]
 custom_minimum_size = Vector2(148, 0)
@@ -241,6 +236,39 @@ theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Go back"
 
+[node name="back_button3" type="Button" parent="UI container" unique_id=2005050902]
+visible = false
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 0
+offset_left = 473.0
+offset_top = 555.0
+offset_right = 709.0
+offset_bottom = 620.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "Go back"
+
+[node name="kana_chart" type="TextureRect" parent="." unique_id=1631154581]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -293.0
+offset_right = 1174.0
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_8qtwp")
+
 [node name="sfx container" type="Node" parent="." unique_id=577299055]
 
 [node name="button_click1" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1804881416]
@@ -256,6 +284,7 @@ autoplay = true
 
 [connection signal="pressed" from="UI container/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI container/VBoxContainer/review_button" to="." method="_on_review_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/hiragana_button" to="." method="_on_hiragana_button_pressed"]
 [connection signal="pressed" from="UI container/VBoxContainer/katakana_button" to="." method="_on_katakana_button_pressed"]
@@ -264,4 +293,5 @@ autoplay = true
 [connection signal="pressed" from="UI container/VBoxContainer/hard_mode_button" to="." method="_on_hard_mode_button_pressed"]
 [connection signal="pressed" from="UI container/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="UI container/back_button2" to="." method="_on_back_button_2_pressed"]
+[connection signal="pressed" from="UI container/back_button3" to="." method="_on_back_button_3_pressed"]
 [connection signal="finished" from="sfx container/sfx_menu_music" to="." method="_on_sfx_menu_music_finished"]

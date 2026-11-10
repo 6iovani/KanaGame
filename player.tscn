@@ -125,7 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://blhm43bnfuxpw" path="res://assets/other assets/fire_sprites/2/1_119.png" id="123_axrdw"]
 [ext_resource type="AudioStream" uid="uid://dcyi2e83c31fp" path="res://assets/sounds/sfx/se_common_C_fire_l_short_02.wav" id="125_yelk6"]
 [ext_resource type="AudioStream" uid="uid://dauf67bffsdo" path="res://assets/sounds/sfx/snd_se_Audience_Zannen.wav" id="126_v3rbc"]
-[ext_resource type="Script" uid="uid://rkhcgjva3ko1" path="res://fire_animation.gd" id="364_ba6dc"]
+[ext_resource type="Script" path="res://fire_animation.gd" id="364_ba6dc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(1156, 135)
@@ -769,7 +769,6 @@ vertical_alignment = 1
 
 [node name="streak_get" type="AudioStreamPlayer" parent="sfx" unique_id=1231700105]
 stream = ExtResource("125_yelk6")
-volume_db = -16.559
 
 [node name="streak_lost" type="AudioStreamPlayer" parent="sfx" unique_id=2047825842]
 stream = ExtResource("126_v3rbc")

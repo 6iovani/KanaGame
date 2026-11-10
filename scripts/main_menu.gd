@@ -6,6 +6,7 @@ func _on_play_button_pressed()-> void:
 	$"UI container/VBoxContainer/play_button".hide()
 	$"UI container/VBoxContainer/options_button".hide()
 	$"UI container/VBoxContainer/exit_button".hide()
+	$"UI container/VBoxContainer/review_button".hide()
 	
 	
 	$"UI container/VBoxContainer/hiragana_button".show()
@@ -86,6 +87,7 @@ func _on_back_button_pressed() -> void:
 	$"UI container/VBoxContainer/play_button".show()
 	$"UI container/VBoxContainer/options_button".show()
 	$"UI container/VBoxContainer/exit_button".show()
+	$"UI container/VBoxContainer/review_button".show()
 	
 	$"UI container/VBoxContainer/hiragana_button".hide()
 	$"UI container/VBoxContainer/katakana_button".hide()
@@ -128,3 +130,12 @@ func _on_hard_mode_button_pressed() -> void:
 
 func _on_sfx_menu_music_finished() -> void:
 	$"sfx container/sfx_menu_music".play()
+
+
+func _on_back_button_3_pressed() -> void:
+	$kana_chart.hide()
+	$"UI container/back_button3".hide()
+
+func _on_review_button_pressed() -> void:
+	$kana_chart.show()
+	$"UI container/back_button3".show()
