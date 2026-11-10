@@ -25,6 +25,7 @@ func _ready() -> void:
 	player.player_death.connect(_on_player_death)
 	print(\"selected mode: \", GameState.selected_mode)
 	$mode_display.text += GameState.selected_mode
+	print(\"selected level: \", GameState.selected_level)
 
 
 func _on_enter_pressed(input: String) -> void:

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dydy08duw2lhf"]
 
 [ext_resource type="Script" uid="uid://o6pdithk1ohw" path="res://scripts/player.gd" id="1_4flbx"]
-[ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="2_onrkg"]
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://d0f0o5ibsx2fc" path="res://scripts/score_handler.gd" id="3_i3pqv"]
 
@@ -62,94 +61,94 @@ text = "Type something..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="score_counter" type="Label" parent="UI" unique_id=322848039]
+[node name="score_counter" type="RichTextLabel" parent="UI" unique_id=1943377599]
 layout_mode = 0
 offset_left = 976.0
 offset_top = 102.0
 offset_right = 1155.0
 offset_bottom = 148.0
-theme_override_colors/font_color = Color(0.78039217, 0.61960787, 0.21176471, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.8726572, 0.65498984, 0.2636696, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 10
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="streak_counter" type="Label" parent="UI" unique_id=942968508]
+[node name="streak_counter" type="RichTextLabel" parent="UI" unique_id=1638116571]
 layout_mode = 0
 offset_left = 1000.0
 offset_top = 314.0
 offset_right = 1144.0
 offset_bottom = 395.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 13
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 10
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="wrong_counter" type="Label" parent="UI" unique_id=1006741528]
+[node name="wrong_counter" type="RichTextLabel" parent="UI" unique_id=308816068]
 layout_mode = 0
 offset_left = 1065.0
 offset_top = 588.0
 offset_right = 1105.0
 offset_bottom = 611.0
-theme_override_colors/font_color = Color(0.93507636, 0, 0.39170632, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+scale = Vector2(1.6663554, 1.6334862)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_onrkg")
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 4
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="missed_counter" type="Label" parent="UI" unique_id=1766797080]
+[node name="missed_counter" type="RichTextLabel" parent="UI" unique_id=1196051255]
 layout_mode = 0
-offset_left = 1002.0
-offset_top = 590.0
-offset_right = 1042.0
-offset_bottom = 613.0
-theme_override_colors/font_color = Color(0.93507636, 0, 0.39170632, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = 1008.00006
+offset_top = 588.0
+offset_right = 1048.0
+offset_bottom = 611.0
+scale = Vector2(1.6663554, 1.6334862)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_onrkg")
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 4
 text = "x0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="score_label" type="Label" parent="UI" unique_id=1248456392]
+[node name="score_label" type="RichTextLabel" parent="UI" unique_id=632475730]
 layout_mode = 0
-offset_left = 977.0
-offset_top = 29.0
-offset_right = 1163.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_hqtel")
-theme_override_font_sizes/font_size = 13
-text = "Score"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="hp_label" type="RichTextLabel" parent="UI" unique_id=1966769472]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 88.0
-offset_right = 58.0
-offset_bottom = 124.90007
+offset_left = 999.0
+offset_top = 290.0
+offset_right = 1149.0
+offset_bottom = 341.66544
 scale = Vector2(1, 0.9677651)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "[wave freq=1]HP"
+text = "[wave freq=1]streak"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="streak_label" type="RichTextLabel" parent="UI" unique_id=1617684532]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 61.0
+offset_right = 1140.0
+offset_bottom = 112.665436
+scale = Vector2(1, 0.9677651)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hqtel")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+text = "[wave freq=1]Score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -170,82 +169,97 @@ vertical_alignment = 1
 script = ExtResource("3_i3pqv")
 display_duration = 2.0
 
-[node name="health" type="CanvasLayer" parent="UI" unique_id=1696482784]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/health" unique_id=239808404]
-anchors_preset = -1
-offset_left = 12.0
-offset_top = 121.0
-offset_right = 173.0
-offset_bottom = 158.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="health_stock" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=1765375213]
-custom_minimum_size = Vector2(25, 20)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
+[node name="hp_label" type="RichTextLabel" parent="UI" unique_id=1966769472]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 83.0
+offset_right = 60.0
+offset_bottom = 119.90007
+scale = Vector2(1, 0.9677651)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "+"
+text = "[wave freq=1]HP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="health_stock2" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=292148488]
+[node name="health" type="Control" parent="UI" unique_id=1029100903]
+anchors_preset = 0
+
+[node name="health_stock_0" type="RichTextLabel" parent="UI/health" unique_id=1765375213]
 custom_minimum_size = Vector2(25, 20)
-layout_mode = 2
+layout_mode = 0
+offset_left = 117.0
+offset_top = 123.0
+offset_right = 142.0
+offset_bottom = 160.0
+pivot_offset = Vector2(40, 20)
 theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "+"
+text = "[wave freq=2]+[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="health_stock3" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=284945214]
+[node name="health_stock_1" type="RichTextLabel" parent="UI/health" unique_id=292148488]
 custom_minimum_size = Vector2(25, 20)
-layout_mode = 2
+layout_mode = 0
+offset_left = 91.0
+offset_top = 123.0
+offset_right = 116.0
+offset_bottom = 160.0
 theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "+"
+text = "[wave freq=2]+[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="health_stock4" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=822929398]
+[node name="health_stock_2" type="RichTextLabel" parent="UI/health" unique_id=284945214]
 custom_minimum_size = Vector2(25, 20)
-layout_mode = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 123.0
+offset_right = 89.0
+offset_bottom = 160.0
 theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "+"
+text = "[wave freq=2]+[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="health_stock5" type="RichTextLabel" parent="UI/health/HBoxContainer" unique_id=291305395]
+[node name="health_stock_3" type="RichTextLabel" parent="UI/health" unique_id=822929398]
 custom_minimum_size = Vector2(25, 20)
-layout_mode = 2
+layout_mode = 0
+offset_left = 37.0
+offset_top = 123.0
+offset_right = 62.0
+offset_bottom = 160.0
 theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "+"
+text = "[wave freq=2]+[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="testing_effects" type="RichTextLabel" parent="UI/health" unique_id=193051205]
+[node name="health_stock_4" type="RichTextLabel" parent="UI/health" unique_id=291305395]
 custom_minimum_size = Vector2(25, 20)
-offset_left = 44.0
-offset_top = 536.0
-offset_right = 129.0
-offset_bottom = 625.0
+layout_mode = 0
+offset_left = 11.0
+offset_top = 123.0
+offset_right = 36.0
+offset_bottom = 160.0
 theme_override_colors/default_color = Color(0.34193712, 0.62561417, 0.07356257, 1)
 theme_override_fonts/normal_font = ExtResource("3_hqtel")
 theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
-text = "[pulse freq=2]+"
+text = "[wave freq=2]+[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1

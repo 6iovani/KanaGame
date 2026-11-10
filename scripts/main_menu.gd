@@ -114,12 +114,14 @@ func _on_back_button_2_pressed() -> void:
 func _on_normal_mode_button_pressed() -> void:
 	$"sfx container/button_click1".play()
 	GameState.selected_difficulty= 60.0
+	GameState.selected_level = "beginner"
 	get_tree().change_scene_to_file("res://Main.tscn")
 	
 	
 func _on_hard_mode_button_pressed() -> void:
 	$"sfx container/button_click1".play()
 	GameState.selected_difficulty= 100.0
+	GameState.selected_level = "master"
 	get_tree().change_scene_to_file("res://Main.tscn")
 	
 

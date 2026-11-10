@@ -1,7 +1,7 @@
 extends Area2D
 
 var current_input: String = ""
-var health:int = 5
+var health:int = GameState.set_player_health()
 signal press_enter(answer: String)
 signal player_death
 signal missed_kana(kana_position:Vector2)
@@ -37,7 +37,11 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 
 	area_entered.connect(_on_area_entered)
-
+	if GameState.selected_level == "beginner":
+		health = 5
+	if GameState.selected_level == "master":
+		health = 3
+		
 func _on_area_entered(node:Area2D)->void:
 	$"../sfx container/sfx_miss".play()
 	var x = node.global_position.x
@@ -48,22 +52,27 @@ func _on_area_entered(node:Area2D)->void:
 
 
 func set_health(new_health:int)->void:
-	var current_hearts = $UI/health/HBoxContainer
-	var heart = current_hearts.get_child(-1)
-	if current_hearts.get_child_count() > new_health:
-		heart.queue_free()
 	
+	var current_hearts = $UI/health
+	var hearts = current_hearts.get_children()
+	
+	for i in range(5 - new_health):
+		print("hide heart node")
+		if current_hearts.get_child_count() > new_health:
+			current_hearts.get_child(i).hide()
+
 	health = new_health
-	
+
 	if health == 3:
-		for i in range(3):
-			current_hearts.get_child(i).text = "[shake rate=10]+[/shake]"
-			current_hearts.get_child(i).add_theme_color_override("default_color", Color(0.929, 0.635, 0.22))
-			
+		for heart in hearts:
+			heart.text = "[shake rate=10]+[/shake]"
+			heart.add_theme_color_override("default_color", Color(0.929, 0.635, 0.22))
+
 	if health == 1:
-		var last_heart = current_hearts.get_child(0)
-		last_heart.text = "[pulse freq=2][wave freq=13][shake rate=10]+[/shake][/wave][/pulse]"
-		last_heart.add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
+		var heart = current_hearts.get_child(4)
+		heart.text = "[pulse freq=2][wave freq=13][shake rate=10]+[/shake][/wave][/pulse]"
+		heart.add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
+		
 	if health <= 0:
 		player_death.emit()
 
