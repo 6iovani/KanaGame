@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://ci75dbtqoolam" path="res://assets/fonts/JinxedWizards.ttf" id="1_hdmo1"]
 [ext_resource type="Script" uid="uid://b2atam08ceoo4" path="res://scripts/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="AudioStream" uid="uid://cde5vve8pbujo" path="res://assets/sounds/sfx/Unpause.wav" id="3_p81d2"]
+[ext_resource type="AudioStream" uid="uid://b8rvg030r8qff" path="res://assets/sounds/sfx/Pause.wav" id="4_2nc7s"]
 
 [node name="pause_menu" type="Control" unique_id=264539941]
 process_mode = 3
@@ -50,6 +52,14 @@ theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 90
 text = "Paused"
 horizontal_alignment = 1
+
+[node name="sfx container" type="Node" parent="." unique_id=186640493]
+
+[node name="sfx_pause" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1975255715]
+stream = ExtResource("3_p81d2")
+
+[node name="sfx_resume" type="AudioStreamPlayer2D" parent="sfx container" unique_id=751791199]
+stream = ExtResource("4_2nc7s")
 
 [connection signal="pressed" from="VBoxContainer/resumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/backButton" to="." method="_on_back_button_pressed"]

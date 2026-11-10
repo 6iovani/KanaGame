@@ -61,6 +61,7 @@ func _on_main_correct(node_position: Vector2) -> void:
 	text = "Correct"
 	add_theme_color_override("default_color", Color(0.18, 0.51, 0.0))
 	play_pop_animation(node_position)
+	AnimationManager.flash($"../score_label")
 	
 	streak_counter += 1
 	$"../streak_counter".text = "x" + str(streak_counter)
@@ -68,6 +69,7 @@ func _on_main_correct(node_position: Vector2) -> void:
 		$"../AnimatedSprite2D".streak_animation()
 	
 	score_counter += 100
+	AnimationManager.pulse($"../score_counter")
 	$"../score_counter".text = "x" + str(score_counter)
 	print("correct!")
 
@@ -76,6 +78,7 @@ func _on_main_wrong(node_position: Vector2) -> void:
 	text = "Wrong!"
 	add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
 	play_pop_animation(node_position)
+	AnimationManager.flash($"../hp_label")
 	
 	streak_counter = 0
 	$"../streak_counter".text = "x" + str(streak_counter)

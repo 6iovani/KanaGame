@@ -7,11 +7,13 @@ func _ready() -> void:
 func pause_game() -> void:
 	get_tree().paused = true
 	show()
-
+	$"sfx container/sfx_pause".play()
+	
 func resume_game() -> void:
 	hide()
 	get_tree().paused = false
-
+	$"sfx container/sfx_resume".play()	
+	
 func _on_resume_button_pressed() -> void:
 	resume_game()
 

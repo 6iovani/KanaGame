@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="5_dy7ct"]
 [ext_resource type="AudioStream" uid="uid://cljkqy8teutau" path="res://assets/sounds/sfx/872332__signaturesoundsorg__click_1.wav" id="6_8qtwp"]
 [ext_resource type="AudioStream" uid="uid://bcrfp1jebrx81" path="res://assets/sounds/sfx/872334__signaturesoundsorg__click_2.wav" id="7_dy7ct"]
-[ext_resource type="AudioStream" uid="uid://dg02pkxjo5ysy" path="res://assets/sounds/sfx/home-menu-music-loop-128bpm-g-major.wav" id="8_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://b377eq00gu1a5" path="res://assets/sounds/sfx/8bit Bossa.mp3" id="8_8qtwp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlkkf"]
 shader = ExtResource("1_fu7sn")
@@ -250,7 +250,7 @@ stream = ExtResource("6_8qtwp")
 stream = ExtResource("7_dy7ct")
 
 [node name="sfx_menu_music" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1422957207]
-stream = ExtResource("8_0o4t1")
+stream = ExtResource("8_8qtwp")
 volume_db = 10.0
 autoplay = true
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmlqxre6nprxv"
+path="res://.godot/imported/Kubbi - Ember - 04 Cascade.ogg-bfb8b3f7e9133179868a585eaa9491a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Kubbi - Ember - 04 Cascade.ogg"
+dest_files=["res://.godot/imported/Kubbi - Ember - 04 Cascade.ogg-bfb8b3f7e9133179868a585eaa9491a4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

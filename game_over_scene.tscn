@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://do2vdk0ydsylt" path="res://assets/shaders/scroll.gdshader" id="2_ud48i"]
 [ext_resource type="Texture2D" uid="uid://db0pys62n6mp1" path="res://assets/other assets/Pattern.png" id="3_v4qw4"]
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="4_v4qw4"]
-[ext_resource type="AudioStream" uid="uid://bswjo3b1fjx6k" path="res://assets/sounds/sfx/game_over.ogg" id="5_v4qw4"]
+[ext_resource type="AudioStream" uid="uid://bmv3fn3slsaxv" path="res://assets/sounds/sfx/Game Over.ogg" id="5_v4qw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2goy"]
 shader = ExtResource("2_ud48i")
@@ -42,7 +42,7 @@ theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
 theme_override_fonts/font = ExtResource("4_v4qw4")
 theme_override_font_sizes/font_size = 16
-text = "Restart"
+text = "Try again?"
 
 [node name="backButton" type="Button" parent="VBoxContainer" unique_id=205383597]
 layout_mode = 2
@@ -52,22 +52,22 @@ theme_override_fonts/font = ExtResource("4_v4qw4")
 theme_override_font_sizes/font_size = 16
 text = "Back to menu"
 
-[node name="Label" type="Label" parent="." unique_id=1859588280]
+[node name="Label" type="RichTextLabel" parent="." unique_id=352801750]
 offset_left = 373.0
 offset_top = 147.0
 offset_right = 820.0
 offset_bottom = 223.0
-theme_override_colors/font_color = Color(0.45895082, 0.47733325, 0.59725326, 1)
-theme_override_fonts/font = ExtResource("4_v4qw4")
-theme_override_font_sizes/font_size = 25
-text = "GAME OVER"
+theme_override_colors/default_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[wave freq=3]GAME OVER"
 horizontal_alignment = 1
 
 [node name="sfx container" type="Node" parent="." unique_id=1547052255]
 
 [node name="sfx_game_over" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1189339841]
 stream = ExtResource("5_v4qw4")
-volume_db = 10.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

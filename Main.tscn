@@ -3,8 +3,10 @@
 [ext_resource type="FontFile" uid="uid://iat738rs0heo" path="res://assets/fonts/FatPixelFont.ttf" id="2_fos0i"]
 [ext_resource type="PackedScene" uid="uid://dydy08duw2lhf" path="res://player.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cynljsuhqjjfo" path="res://kana_spawner.tscn" id="4_cm0pq"]
+[ext_resource type="AudioStream" uid="uid://dmlqxre6nprxv" path="res://assets/sounds/sfx/Kubbi - Ember - 04 Cascade.ogg" id="5_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://by743wjpia1id" path="res://pause_menu.tscn" id="6_3dxm6"]
 [ext_resource type="AudioStream" uid="uid://0gdweo3s2whj" path="res://assets/sounds/sfx/snd_hurt1.wav" id="6_lgr22"]
+[ext_resource type="AudioStream" uid="uid://dnluriecf01vu" path="res://assets/sounds/sfx/snd_se_common_LifeUp.wav" id="7_lgr22"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
 
@@ -43,6 +45,7 @@ func _on_enter_pressed(input: String) -> void:
 	if matching_kana != null:
 		var kana_position = matching_kana.position
 		
+		$\"sfx container/sfx_correct\".play()
 		correct.emit(kana_position)
 		matching_kana.queue_free()
 		
@@ -97,12 +100,15 @@ visible = false
 
 [node name="sfx container" type="Node" parent="." unique_id=819545058]
 
-[node name="sfx_gamemode_selected" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1665937532]
+[node name="sfx_music" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1665937532]
+stream = ExtResource("5_3dxm6")
+autoplay = true
 
 [node name="sfx_miss" type="AudioStreamPlayer2D" parent="sfx container" unique_id=554051433]
 stream = ExtResource("6_lgr22")
 
 [node name="sfx_correct" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1916454660]
+stream = ExtResource("7_lgr22")
 
 [connection signal="correct" from="." to="player/UI/miss_label" method="_on_main_correct"]
 [connection signal="wrong" from="." to="player/UI/miss_label" method="_on_main_wrong"]

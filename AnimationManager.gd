@@ -48,3 +48,25 @@ func fade_out()-> void:
 		self, "scale", Vector2(0.8, 0.8), fade_duration
 	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	
+@export var pulse_duration: float = 0.5
+@export var pulse_scale: float = 1.2
+
+func pulse(target: Control, speed: float = 2.0) -> void:
+	var original_scale: Vector2 = target.scale
+	var tween = create_tween()
+
+	var duration = pulse_duration / speed
+
+	tween.tween_property(
+		target,
+		"scale",
+		original_scale * 1.2,
+		duration
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(
+		target,
+		"scale",
+		original_scale,
+		duration
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)

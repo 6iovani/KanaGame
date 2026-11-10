@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func streak_animation() -> void:
+	$"../../sfx/streak_get".play()
 	show()
 	
 	scale = Vector2.ZERO
@@ -31,7 +32,7 @@ func streak_animation() -> void:
 	)
 
 func lost_streak()-> void:
-
+	$"../../sfx/streak_lost".play()
 	var tween = create_tween()
 	
 	# Fade out and shrink 
