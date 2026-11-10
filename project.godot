@@ -18,6 +18,7 @@ config/icon="res://assets/other assets/icon.svg"
 [autoload]
 
 GameState="*uid://bi8txuthvvgw7"
+AnimationManager="*uid://cll1rcqjhdd5q"
 
 [display]
 

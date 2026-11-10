@@ -36,13 +36,15 @@ func play_pop_animation(spawn_position: Vector2) -> void:
 		.set_ease(Tween.EASE_IN)
 
 
-func _on_player_missed_kana(kana_position: Vector2) -> void:
+func _on_player_missed_kana(node_position: Vector2) -> void:
 	text = "Miss"
 	add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
-	play_pop_animation(kana_position)
+	play_pop_animation(node_position)
+	AnimationManager.flash($"../hp_label")
 	
 	streak_counter = 0
 	$"../streak_counter".text = "x" + str(streak_counter)
+	$"../AnimatedSprite2D".lost_streak()
 	
 	if score_counter < 0:
 		$"../score_counter".text = "x" + str(score_counter)
@@ -55,25 +57,29 @@ func _on_player_missed_kana(kana_position: Vector2) -> void:
 	print("miss")
 
 
-func _on_main_correct(pos: Vector2) -> void:
+func _on_main_correct(node_position: Vector2) -> void:
 	text = "Correct"
 	add_theme_color_override("default_color", Color(0.18, 0.51, 0.0))
-	play_pop_animation(pos)
+	play_pop_animation(node_position)
+	
 	streak_counter += 1
 	$"../streak_counter".text = "x" + str(streak_counter)
+	if streak_counter >= 10 and not $"../AnimatedSprite2D".visible:
+		$"../AnimatedSprite2D".streak_animation()
 	
 	score_counter += 100
 	$"../score_counter".text = "x" + str(score_counter)
 	print("correct!")
 
 
-func _on_main_wrong(pos: Vector2) -> void:
+func _on_main_wrong(node_position: Vector2) -> void:
 	text = "Wrong!"
 	add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
-	play_pop_animation(pos)
+	play_pop_animation(node_position)
 	
 	streak_counter = 0
 	$"../streak_counter".text = "x" + str(streak_counter)
+	$"../AnimatedSprite2D".lost_streak()
 	
 	if score_counter <= 0:
 		$"../score_counter".text = "x" + str(0)
