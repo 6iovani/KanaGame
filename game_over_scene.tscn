@@ -18,6 +18,7 @@ offset_bottom = 658.0
 color = Color(0.023371784, 0.023371786, 0.023371782, 1)
 
 [node name="Pattern" type="TextureRect" parent="." unique_id=759106663]
+visible = false
 material = SubResource("ShaderMaterial_o2goy")
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,14 +32,14 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1100536255]
-offset_left = 392.0
-offset_top = 269.0
-offset_right = 794.0
-offset_bottom = 390.0
+offset_left = 707.0
+offset_top = 304.0
+offset_right = 1109.0
+offset_bottom = 425.0
 
 [node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=732354016]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_color = Color(0.53730357, 0.53330356, 0.50438887, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
 theme_override_fonts/font = ExtResource("4_v4qw4")
 theme_override_font_sizes/font_size = 16
@@ -46,23 +47,110 @@ text = "Try again?"
 
 [node name="backButton" type="Button" parent="VBoxContainer" unique_id=205383597]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_color = Color(0.53730357, 0.53330356, 0.50438887, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
 theme_override_fonts/font = ExtResource("4_v4qw4")
 theme_override_font_sizes/font_size = 16
 text = "Back to menu"
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=352801750]
-offset_left = 373.0
-offset_top = 147.0
-offset_right = 820.0
-offset_bottom = 223.0
-theme_override_colors/default_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+offset_left = 348.0
+offset_top = 54.0
+offset_right = 903.0
+offset_bottom = 182.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("4_v4qw4")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 27
 bbcode_enabled = true
 text = "[wave freq=3]GAME OVER"
 horizontal_alignment = 1
+
+[node name="final_score" type="RichTextLabel" parent="." unique_id=1704748417]
+offset_left = 14.0
+offset_top = 478.0
+offset_right = 299.0
+offset_bottom = 633.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave freq=3]Final Score :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grade" type="RichTextLabel" parent="." unique_id=1914333793]
+offset_left = 236.0
+offset_top = 488.0
+offset_right = 521.0
+offset_bottom = 643.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave freq=3]grade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="RichTextLabel" parent="." unique_id=2113570485]
+offset_left = 73.0
+offset_top = 158.0
+offset_right = 301.0
+offset_bottom = 255.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[wave freq=3]Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="miss_count" type="RichTextLabel" parent="." unique_id=2090496082]
+offset_left = 48.0
+offset_top = 258.0
+offset_right = 308.0
+offset_bottom = 305.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[wave freq=3]Misses :"
+vertical_alignment = 1
+
+[node name="correct_count" type="RichTextLabel" parent="." unique_id=1269183783]
+offset_left = 46.0
+offset_top = 353.0
+offset_right = 331.0
+offset_bottom = 397.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[wave freq=3]correct :"
+vertical_alignment = 1
+
+[node name="incorrect_count" type="RichTextLabel" parent="." unique_id=1976459954]
+offset_left = 47.0
+offset_top = 312.0
+offset_right = 319.0
+offset_bottom = 349.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[wave freq=3]incorrect :"
+vertical_alignment = 1
+
+[node name="points" type="RichTextLabel" parent="." unique_id=401850080]
+offset_left = 45.0
+offset_top = 406.0
+offset_right = 351.0
+offset_bottom = 453.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_v4qw4")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[wave freq=3]points :"
+vertical_alignment = 1
 
 [node name="sfx container" type="Node" parent="." unique_id=1547052255]
 

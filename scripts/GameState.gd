@@ -4,6 +4,8 @@ var selected_mode:String
 var selected_difficulty:float
 var selected_level:String
 var player_health:int
+var final_stats:Array = []
+
 
 func set_player_health() -> int:
 	if GameState.selected_level == "beginner":

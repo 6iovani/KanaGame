@@ -27,7 +27,7 @@ offset_bottom = 384.0
 
 [node name="resumeButton" type="Button" parent="VBoxContainer" unique_id=244645063]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87382656, 0.88123876, 0.92292076, 1)
+theme_override_colors/font_color = Color(0.4915647, 0.49552995, 0.470393, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
 theme_override_fonts/font = ExtResource("2_p81d2")
 theme_override_font_sizes/font_size = 18
@@ -35,7 +35,7 @@ text = "Resume"
 
 [node name="backButton" type="Button" parent="VBoxContainer" unique_id=777276916]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87382656, 0.88123876, 0.92292076, 1)
+theme_override_colors/font_color = Color(0.4915647, 0.49552995, 0.470393, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.973535, 0.9735351, 0.973535, 1)
 theme_override_fonts/font = ExtResource("2_p81d2")
 theme_override_font_sizes/font_size = 18

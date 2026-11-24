@@ -6,6 +6,7 @@ extends RichTextLabel
 
 var score_counter:int = 0
 var wrong_guess_counter:int = 0
+var correct_guess_counter:int = 0
 var streak_counter:int = 0
 var missed_counter:int = 0
 
@@ -68,6 +69,7 @@ func _on_main_correct(node_position: Vector2) -> void:
 	if streak_counter >= 10 and not $"../AnimatedSprite2D".visible:
 		$"../AnimatedSprite2D".streak_animation()
 	
+	correct_guess_counter += 1
 	score_counter += 100
 	AnimationManager.pulse($"../score_counter")
 	$"../score_counter".text = "x" + str(score_counter)
@@ -93,3 +95,8 @@ func _on_main_wrong(node_position: Vector2) -> void:
 	wrong_guess_counter +=1
 	$"../wrong_counter".text = "x" + str(wrong_guess_counter)
 	print("wrong guess")
+
+
+
+func _on_player_player_death() -> void:
+	GameState.final_stats = [score_counter,correct_guess_counter,wrong_guess_counter,missed_counter]
