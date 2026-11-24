@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dmlqxre6nprxv" path="res://assets/sounds/sfx/Kubbi - Ember - 04 Cascade.ogg" id="5_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://by743wjpia1id" path="res://pause_menu.tscn" id="6_3dxm6"]
 [ext_resource type="AudioStream" uid="uid://0gdweo3s2whj" path="res://assets/sounds/sfx/snd_hurt1.wav" id="6_lgr22"]
+[ext_resource type="AudioStream" uid="uid://dauf67bffsdo" path="res://assets/sounds/sfx/snd_se_Audience_Zannen.wav" id="6_trn2v"]
 [ext_resource type="AudioStream" uid="uid://dnluriecf01vu" path="res://assets/sounds/sfx/snd_se_common_LifeUp.wav" id="7_lgr22"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
@@ -22,12 +23,16 @@ signal wrong(pos:Vector2)
 
 
 func _ready() -> void:
-	player.set_health(player.health)
+	
+	if GameState.selected_level == \"master\":
+		$difficulty_timer.wait_time = 6
+		
 	player.press_enter.connect(_on_enter_pressed)
 	player.player_death.connect(_on_player_death)
 	print(\"selected mode: \", GameState.selected_mode)
 	$mode_display.text += GameState.selected_mode
 	print(\"selected level: \", GameState.selected_level)
+	$level_display.text += GameState.selected_level
 
 
 func _on_enter_pressed(input: String) -> void:
@@ -48,12 +53,14 @@ func _on_enter_pressed(input: String) -> void:
 		$\"sfx container/sfx_correct\".play()
 		correct.emit(kana_position)
 		matching_kana.queue_free()
-		
+
 	else:
-		wrong.emit(Vector2(550.0,550.0))
-		$\"sfx container/sfx_miss\".play()
-		player.set_health(player.health - 1)
 		
+		wrong.emit(Vector2(550.0,550.0))
+		$\"sfx container/sfx_wrong\".play()
+		if GameState.selected_level == \"master\" :
+			player.set_health(player.health - 1)
+
 
 func _on_player_death()-> void:
 	get_tree().change_scene_to_file(\"res://game_over_scene.tscn\")
@@ -62,8 +69,10 @@ func _on_player_death()-> void:
 func _on_difficulty_timer_timeout() -> void:
 	
 	if $kana_spawner/spawn_timer.wait_time > 1:
+		if GameState.selected_level == \"master\":
+			$kana_spawner/spawn_timer.wait_time -= 0.3
 		$kana_spawner/spawn_timer.wait_time -= 0.2
-	
+
 	
 	if $kana_spawner.new_fall_speed <= max_fall_speed:
 		$kana_spawner.new_fall_speed += speed_increase
@@ -95,6 +104,16 @@ theme_override_font_sizes/font_size = 5
 text = "Mode: "
 autowrap_mode = 2
 
+[node name="level_display" type="Label" parent="." unique_id=1123708280]
+offset_left = 4.0
+offset_top = 520.0
+offset_right = 187.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("2_fos0i")
+theme_override_font_sizes/font_size = 5
+text = "level: "
+autowrap_mode = 2
+
 [node name="pause_menu" parent="." unique_id=1619959595 instance=ExtResource("6_3dxm6")]
 visible = false
 
@@ -105,10 +124,14 @@ stream = ExtResource("5_3dxm6")
 autoplay = true
 
 [node name="sfx_miss" type="AudioStreamPlayer2D" parent="sfx container" unique_id=554051433]
-stream = ExtResource("6_lgr22")
+stream = ExtResource("6_trn2v")
 
 [node name="sfx_correct" type="AudioStreamPlayer2D" parent="sfx container" unique_id=1916454660]
 stream = ExtResource("7_lgr22")
+
+[node name="sfx_wrong" type="AudioStreamPlayer2D" parent="sfx container" unique_id=418191388]
+stream = ExtResource("6_lgr22")
+volume_db = 12.0
 
 [connection signal="correct" from="." to="player/UI/miss_label" method="_on_main_correct"]
 [connection signal="wrong" from="." to="player/UI/miss_label" method="_on_main_wrong"]

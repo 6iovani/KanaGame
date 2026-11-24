@@ -35,15 +35,13 @@ func _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-
+	
+	set_health(health)
 	area_entered.connect(_on_area_entered)
-	if GameState.selected_level == "beginner":
-		health = 5
-	if GameState.selected_level == "master":
-		health = 3
+	
 		
 func _on_area_entered(node:Area2D)->void:
-	$"../sfx container/sfx_miss".play()
+	$"../sfx container/sfx_wrong".play()
 	var x = node.global_position.x
 	var kana_position:Vector2 = Vector2(x,600.0)
 	missed_kana.emit(kana_position)

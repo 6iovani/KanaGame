@@ -43,16 +43,23 @@ func _on_player_missed_kana(node_position: Vector2) -> void:
 	play_pop_animation(node_position)
 	AnimationManager.flash($"../hp_label")
 	
+	if streak_counter >= 10:
+		$"../AnimatedSprite2D".lost_streak()
 	streak_counter = 0
 	$"../streak_counter".text = "x" + str(streak_counter)
-	$"../AnimatedSprite2D".lost_streak()
 	
-	if score_counter < 0:
+	
+	if GameState.selected_level == "beginner" :
+		score_counter -= 25
 		$"../score_counter".text = "x" + str(score_counter)
-	else:
+	if GameState.selected_level == "master" :
 		score_counter -= 50
 		$"../score_counter".text = "x" + str(score_counter)
-	
+		
+	if score_counter < 0:
+		score_counter = 0
+		$"../score_counter".text = "x" + str(score_counter)
+
 	missed_counter +=1
 	$"../missed_counter".text = "x" + str(missed_counter)
 	print("miss")
@@ -80,16 +87,23 @@ func _on_main_wrong(node_position: Vector2) -> void:
 	text = "Wrong!"
 	add_theme_color_override("default_color", Color(0.918, 0.161, 0.0))
 	play_pop_animation(node_position)
-	AnimationManager.flash($"../hp_label")
-	
+
+	if streak_counter >= 10:
+		$"../AnimatedSprite2D".lost_streak()
 	streak_counter = 0
 	$"../streak_counter".text = "x" + str(streak_counter)
-	$"../AnimatedSprite2D".lost_streak()
+
 	
-	if score_counter <= 0:
-		$"../score_counter".text = "x" + str(0)
-	else:
-		score_counter -= 25
+	if GameState.selected_level == "master" :
+		AnimationManager.flash($"../hp_label")
+		if score_counter <= 0:
+			$"../score_counter".text = "x" + str(0)
+		else:
+			score_counter -= 125
+			$"../score_counter".text = "x" + str(score_counter)
+	
+	if score_counter < 0:
+		score_counter = 0
 		$"../score_counter".text = "x" + str(score_counter)
 	
 	wrong_guess_counter +=1
